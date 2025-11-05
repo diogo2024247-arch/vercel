@@ -1,15 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>diogo</title>
-</head>
-<body>
-    <center>
-        <h1>site vercel </h1>
-        <h2>diogo aluno</h2>
-    </center>
-</body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site de Ciências</title>
+  <style>
+    /* ==== Estilo inspirado no One UI (Samsung) ==== */
 
+    :root {
+      --primary-color: #007aff; /* Azul Samsung */
+      --secondary-color: #f4f6f9;
+      --text-color: #1c1c1e;
+      --text-secondary: #6b6b6b;
+      --card-bg: #ffffffcc;
+      --nav-bg: #ffffffdd;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --radius: 16px;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--secondary-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #005fcc);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 80px;
+      border-radius: 0 0 24px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    /* ==== Navegação ==== */
+    nav {
+      background-color: var(--nav-bg);
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 10px 16px;
+      font-weight: 500;
+      border-radius: 20px;
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* ==== Seções ==== */
+    section {
+      padding: 40px 5%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* ==== Cards ==== */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 20px;
+      flex: 1 1 calc(33% - 40px);
+      min-width: 280px;
+      max-width: 340px;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: var(--radius);
+      object-fit: cover;
+      height: 180px;
+    }
+
+    .card h3 {
+      margin-top: 14px;
+      font-size: 1.2em;
+      color: var(--text-color);
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.95em;
+      line-height: 1.6em;
+    }
+
+    /* ==== Rodapé ==== */
+    footer {
+      background-color: #f9f9fa;
+      color: #888;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex: 1 1 calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        flex: 1 1 100%;
+      }
+
+      header {
+        padding: 40px 10px 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Bem-vindo ao Site de Ciências</h1>
+    <p>Explorando o maravilhoso mundo da Ciência!</p>
+  </header>
+
+  <nav>
+    <a href="#biologia">Biologia</a>
+    <a href="#fisica">Física</a>
+    <a href="#quimica">Química</a>
+    <a href="#astronomia">Astronomia</a>
+  </nav>
+
+  <section id="biologia">
+    <h2>Biologia</h2>
+    <div class="content">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Biologia" alt="Imagem de Biologia">
+        <h3>O Mundo das Células</h3>
+        <p>As células são a unidade básica da vida, essenciais para entender o funcionamento dos seres vivos.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Biologia" alt="Imagem de Biologia">
+        <h3>Ecossistemas</h3>
+        <p>Os ecossistemas representam a interação entre os organismos e o ambiente, fundamentais para a sustentabilidade da vida.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fisica">
+    <h2>Física</h2>
+    <div class="content">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Física" alt="Imagem de Física">
+        <h3>A Gravidade</h3>
+        <p>A força que mantém os corpos celestes unidos e define o movimento no universo.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Física" alt="Imagem de Física">
+        <h3>Leis de Newton</h3>
+        <p>As leis que explicam o movimento dos corpos e são base da mecânica clássica.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="quimica">
+    <h2>Química</h2>
+    <div class="content">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Química" alt="Imagem de Química">
+        <h3>A Tabela Periódica</h3>
+        <p>A base da química moderna, organizando os elementos de forma lógica e funcional.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Química" alt="Imagem de Química">
+        <h3>Reações Químicas</h3>
+        <p>Transformações entre substâncias que ocorrem em todos os processos naturais e industriais.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="astronomia">
+    <h2>Astronomia</h2>
+    <div class="content">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Astronomia" alt="Imagem de Astronomia">
+        <h3>O Sistema Solar</h3>
+        <p>Nosso lar cósmico, composto pelo Sol e os corpos celestes que o orbitam.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Astronomia" alt="Imagem de Astronomia">
+        <h3>Buracos Negros</h3>
+        <p>Regiões misteriosas do espaço onde a gravidade é tão intensa que nada pode escapar.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Site de Ciências. Todos os direitos reservados.</p>
+  </footer>
+</body>
 </html>
+
