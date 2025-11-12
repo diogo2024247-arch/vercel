@@ -1,588 +1,156 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site de Ciências</title>
+  <title>Neon Science - O Futuro da Ciência</title>
   <style>
-    /* ==== Estilo inspirado no One UI (Samsung) ==== */
-
-    :root {
-      --primary-color: #007aff; /* Azul Samsung */
-      --secondary-color: #f4f6f9;
-      --text-color: #1c1c1e;
-      --text-secondary: #6b6b6b;
-      --card-bg: #ffffffcc;
-      --nav-bg: #ffffffdd;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      --radius: 16px;
-      --transition: all 0.3s ease;
-    }
-
-    body {
-      font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--secondary-color);
-      color: var(--text-color);
-      scroll-behavior: smooth;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--primary-color), #005fcc);
-      color: white;
-      text-align: center;
-      padding: 60px 20px 80px;
-      border-radius: 0 0 24px 24px;
-      box-shadow: var(--shadow);
-    }
-
-    header h1 {
-      font-size: 2.2em;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 1.1em;
-      opacity: 0.9;
-    }
-
-    /* ==== Navegação ==== */
-    nav {
-      background-color: var(--nav-bg);
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      padding: 10px 16px;
-      font-weight: 500;
-      border-radius: 20px;
-      transition: var(--transition);
-    }
-
-    nav a:hover {
-      background: var(--primary-color);
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    /* ==== Seções ==== */
-    section {
-      padding: 40px 5%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      color: var(--primary-color);
-      margin-bottom: 20px;
-      font-size: 1.8em;
-    }
-
-    .content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    /* ==== Cards ==== */
-    .card {
-      background: var(--card-bg);
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 20px;
-      flex: 1 1 calc(33% - 40px);
-      min-width: 280px;
-      max-width: 340px;
-      transition: var(--transition);
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: var(--radius);
-      object-fit: cover;
-      height: 180px;
-    }
-
-    .card h3 {
-      margin-top: 14px;
-      font-size: 1.2em;
-      color: var(--text-color);
-    }
-
-    .card p {
-      color: var(--text-secondary);
-      font-size: 0.95em;
-      line-height: 1.6em;
-    }
-
-    /* ==== Rodapé ==== */
-    footer {
-      background-color: #f9f9fa;
-      color: #888;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-      margin-top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .card {
-        flex: 1 1 calc(50% - 20px);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .card {
-        flex: 1 1 100%;
-      }
-
-      header {
-        padding: 40px 10px 60px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>Bem-vindo ao Site de Ciências</h1>
-    <p>Explorando o maravilhoso mundo da Ciência!</p>
-  </header>
-
-  <nav>
-    <a href="#biologia">Biologia</a>
-    <a href="#fisica">Física</a>
-    <a href="#quimica">Química</a>
-    <a href="#astronomia">Astronomia</a>
-  </nav>
-
-  <section id="biologia">
-    <h2>Biologia</h2>
-    <div class="content">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=Biologia" alt="Imagem de Biologia">
-        <h3>O Mundo das Células</h3>
-        <p>As células são a unidade básica da vida, essenciais para entender o funcionamento dos seres vivos.</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=Biologia" alt="Imagem de Biologia">
-        <h3>Ecossistemas</h3>
-        <p>Os ecossistemas representam a interação entre os organismos e o ambiente, fundamentais para a sustentabilidade da vida.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="fisica">
-    <h2>Física</h2>
-    <div class="content">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=Física" alt="Imagem de Física">
-        <h3>A Gravidade</h3>
-        <p>A força que mantém os corpos celestes unidos e define o movimento no universo.</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=Física" alt="Imagem de Física">
-        <h3>Leis de Newton</h3>
-        <p>As leis que explicam o movimento dos corpos e são base da mecânica clássica.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="quimica">
-    <h2>Química</h2>
-    <div class="content">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=Química" alt="Imagem de Química">
-        <h3>A Tabela Periódica</h3>
-        <p>A base da química moderna, organizando os elementos de forma lógica e funcional.</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=Química" alt="Imagem de Química">
-        <h3>Reações Químicas</h3>
-        <p>Transformações entre substâncias que ocorrem em todos os processos naturais e industriais.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="astronomia">
-    <h2>Astronomia</h2>
-    <div class="content">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=Astronomia" alt="Imagem de Astronomia">
-        <h3>O Sistema Solar</h3>
-        <p>Nosso lar cósmico, composto pelo Sol e os corpos celestes que o orbitam.</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=Astronomia" alt="Imagem de Astronomia">
-        <h3>Buracos Negros</h3>
-        <p>Regiões misteriosas do espaço onde a gravidade é tão intensa que nada pode escapar.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Site de Ciências. Todos os direitos reservados.</p>
-  </footer>
-</body>
-</html
-  <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mundo da Ciência</title>
-  <style>
-    /* ==== Paleta e tema científico ==== */
-    :root {
-      --primary-color: #1e90ff; /* Azul científico */
-      --accent-color: #00d4ff; /* Ciano tecnológico */
-      --bg-gradient: linear-gradient(180deg, #0a0d27 0%, #1a1d3a 100%);
-      --card-bg: rgba(255, 255, 255, 0.1);
-      --text-color: #f0f0f5;
-      --text-secondary: #c7c7d2;
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-      --radius: 18px;
-      --transition: all 0.3s ease;
-    }
-
+    /* ===== ESTILOS GERAIS ===== */
     body {
       margin: 0;
-      padding: 0;
-      font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      color: var(--text-color);
-      background: var(--bg-gradient);
-      background-attachment: fixed;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at top, #020024, #090979, #000);
+      color: #fff;
       overflow-x: hidden;
     }
 
-    /* ==== Header ==== */
     header {
+      background: rgba(0, 0, 0, 0.6);
       text-align: center;
-      padding: 80px 20px 100px;
-      background: radial-gradient(circle at 20% 30%, #0d47a1, transparent 70%), 
-                  radial-gradient(circle at 80% 70%, #1e88e5, transparent 70%);
-      color: white;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 300px;
-      height: 300px;
-      background: rgba(0, 212, 255, 0.15);
-      border-radius: 50%;
-      filter: blur(100px);
+      padding: 40px 20px;
+      box-shadow: 0 0 25px #00f3ff;
     }
 
     header h1 {
-      font-size: 2.8em;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-size: 3em;
+      text-shadow: 0 0 15px #00f3ff;
     }
 
-    header p {
-      font-size: 1.2em;
-      opacity: 0.85;
-    }
-
-    /* ==== Navegação ==== */
     nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      padding: 10px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      text-align: center;
+      margin-top: 20px;
     }
 
     nav a {
-      color: var(--accent-color);
+      color: #00f3ff;
+      margin: 0 15px;
       text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 30px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: var(--transition);
-      border: 1px solid transparent;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      background: rgba(0, 212, 255, 0.15);
-      border-color: var(--accent-color);
-      color: #fff;
-      transform: translateY(-2px);
+      text-shadow: 0 0 10px #00f3ff;
     }
 
-    /* ==== Seções ==== */
+    /* ===== SEÇÃO PRINCIPAL ===== */
     section {
-      padding: 60px 5%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
+      padding: 60px 20px;
       text-align: center;
-      color: var(--accent-color);
-      font-size: 2em;
-      margin-bottom: 30px;
-      position: relative;
     }
 
-    h2::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: var(--accent-color);
-      margin: 10px auto 0;
-      border-radius: 3px;
+    section h2 {
+      font-size: 2.5em;
+      color: #00f3ff;
+      text-shadow: 0 0 10px #00f3ff;
     }
 
-    /* ==== Cards ==== */
-    .content {
+    section p {
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.6;
+      font-size: 1.2em;
+    }
+
+    /* ===== GALERIA ===== */
+    .galeria {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 24px;
+      gap: 20px;
+      margin-top: 40px;
     }
 
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(20px);
-      padding: 20px;
-      flex: 1 1 calc(33% - 40px);
-      min-width: 280px;
-      max-width: 340px;
-      transition: var(--transition);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      position: relative;
-      overflow: hidden;
+    .galeria img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00f3ff;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -80px;
-      left: -80px;
-      width: 160px;
-      height: 160px;
-      background: rgba(0, 212, 255, 0.15);
-      border-radius: 50%;
-      filter: blur(80px);
-      z-index: 0;
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00f3ff;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      height: 180px;
-      object-fit: cover;
-      margin-bottom: 15px;
-      z-index: 2;
-      position: relative;
-    }
-
-    .card h3 {
-      color: var(--accent-color);
-      margin-bottom: 10px;
-      z-index: 2;
-      position: relative;
-    }
-
-    .card p {
-      color: var(--text-secondary);
-      font-size: 0.95em;
-      line-height: 1.6em;
-      z-index: 2;
-      position: relative;
-    }
-
-    /* ==== Footer ==== */
+    /* ===== RODAPÉ ===== */
     footer {
-      background: rgba(0, 0, 0, 0.6);
-      color: #bbb;
+      background: rgba(0, 0, 0, 0.8);
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      letter-spacing: 0.5px;
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 30px 20px;
+      box-shadow: 0 0 20px #00f3ff inset;
     }
 
+    footer p {
+      font-size: 1em;
+      color: #aaa;
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
     @media (max-width: 768px) {
-      .card {
-        flex: 1 1 calc(50% - 20px);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .card {
-        flex: 1 1 100%;
-      }
+      header h1 { font-size: 2.2em; }
+      section h2 { font-size: 2em; }
+      .galeria img { width: 90%; }
     }
   </style>
+
+  <!-- Fonte futurista -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <header>
-    <h1>Mundo da Ciência</h1>
-    <p>Explorando o conhecimento, do átomo ao universo 🌌</p>
+    <h1>⚛️ Neon Science ⚛️</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#descobertas">Descobertas</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#biologia">Biologia</a>
-    <a href="#fisica">Física</a>
-    <a href="#quimica">Química</a>
-    <a href="#astronomia">Astronomia</a>
-    <a href="#tecnologia">Tecnologia</a>
-    <a href="#curiosidades">Curiosidades</a>
-  </nav>
+  <section id="sobre">
+    <h2>O Futuro da Ciência</h2>
+    <p>Bem-vindo ao <strong>Neon Science</strong> — um portal dedicado à exploração das fronteiras da física, biotecnologia e inteligência artificial.  
+    Nossa missão é revelar o que o futuro reserva para a humanidade através da ciência e da inovação.</p>
+  </section>
 
-  <!-- Seções principais -->
-  <section id="biologia">
-    <h2>Biologia</h2>
-    <div class="content">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1581093588401-22a294d0d05e?auto=format&fit=crop&w=800&q=80" alt="Microscópio">
-        <h3>O Mundo Invisível</h3>
-        <p>Microrganismos são responsáveis por grande parte dos processos biológicos do planeta.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80" alt="DNA">
-        <h3>O DNA da Vida</h3>
-        <p>O DNA contém o código genético que molda todos os seres vivos da Terra.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="Célula">
-        <h3>Células: Fábricas da Vida</h3>
-        <p>Cada célula é uma usina complexa de energia, comunicação e reprodução.</p>
-      </div>
+  <section id="descobertas">
+    <h2>Descobertas Recentes</h2>
+    <p>Da fusão nuclear limpa às interfaces cérebro-máquina, a ciência do amanhã está sendo moldada hoje.  
+    Explore as descobertas mais recentes que estão redefinindo o que é possível.</p>
+
+    <div class="galeria">
+      <img src="https://images.unsplash.com/photo-1581091870622-9c8b5d4a0f87?auto=format&fit=crop&w=800&q=80" alt="Laboratório Futurista">
+      <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=800&q=80" alt="Cérebro Digital">
+      <img src="https://images.unsplash.com/photo-1581091215367-59ab6aee74ab?auto=format&fit=crop&w=800&q=80" alt="Robô Inteligente">
     </div>
   </section>
 
-  <section id="fisica">
-    <h2>Física</h2>
-    <div class="content">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1470165473874-61b03fb56fc6?auto=format&fit=crop&w=800&q=80" alt="Gravidade">
-        <h3>Gravidade e Espaço</h3>
-        <p>A gravidade conecta o cosmos, moldando planetas, estrelas e galáxias.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1621605815971-9e1b2eae72f5?auto=format&fit=crop&w=800&q=80" alt="Energia">
-        <h3>Energia e Movimento</h3>
-        <p>As leis da física explicam tudo — de uma queda d’água a uma viagem espacial.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e85?auto=format&fit=crop&w=800&q=80" alt="Relatividade">
-        <h3>Relatividade</h3>
-        <p>Einstein revelou que espaço e tempo são elásticos e se curvam pela gravidade.</p>
-      </div>
+  <section id="galeria">
+    <h2>Visões do Futuro</h2>
+    <div class="galeria">
+      <img src="https://images.unsplash.com/photo-1581092334504-16c86f1e0d4c?auto=format&fit=crop&w=800&q=80" alt="Nanotecnologia">
+      <img src="https://images.unsplash.com/photo-1581093588401-9f3e9c7a5e9c?auto=format&fit=crop&w=800&q=80" alt="Estação Espacial">
+      <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc4?auto=format&fit=crop&w=800&q=80" alt="Energia do Futuro">
     </div>
   </section>
 
-  <section id="quimica">
-    <h2>Química</h2>
-    <div class="content">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1581091215367-59ab6bda74e3?auto=format&fit=crop&w=800&q=80" alt="Laboratório">
-        <h3>Reações e Transformações</h3>
-        <p>Reações químicas sustentam desde o metabolismo humano até a energia nuclear.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1623582477808-1caa66b74fd7?auto=format&fit=crop&w=800&q=80" alt="Moléculas">
-        <h3>Moléculas em Ação</h3>
-        <p>Tudo o que existe é formado por átomos e suas ligações invisíveis.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1598554505043-190d3d8597c7?auto=format&fit=crop&w=800&q=80" alt="Tabela periódica">
-        <h3>Tabela Periódica</h3>
-        <p>Organiza os elementos do universo e explica suas propriedades químicas.</p>
-      </div>
-    </div>
-  </section>
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <p>Quer colaborar com nossas pesquisas ou enviar uma matéria científica?  
+    Escreva para: <a
 
-  <section id="astronomia">
-    <h2>Astronomia</h2>
-    <div class="content">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80" alt="Sistema Solar">
-        <h3>O Sistema Solar</h3>
-        <p>Nosso lar cósmico gira em torno do Sol, uma estrela comum em uma galáxia extraordinária.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Galáxia">
-        <h3>Galáxias Distantes</h3>
-        <p>Bilhões de galáxias formam o universo visível — e talvez infinitos mundos além.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1614729939124-03202ac7ef88?auto=format&fit=crop&w=800&q=80" alt="Buraco negro">
-        <h3>Buracos Negros</h3>
-        <p>Regiões onde a gravidade é tão intensa que o espaço-tempo se dobra sobre si mesmo.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="curiosidades">
-    <h2>Curiosidades Científicas</h2>
-    <div class="content">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Som no espaço">
-        <h3>O Silêncio do Espaço</h3>
-        <p>No vácuo do espaço, o som não pode se propagar — é o silêncio absoluto.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1579547621113-e4bbf64e9156?auto=format&fit=crop&w=800&q=80" alt="Relâmpagos">
-        <h3>Tempestades Elétricas</h3>
-        <p>Relâmpagos podem atingir 30 mil graus Celsius — mais quentes que a superfície do Sol.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1529676468690-d0c0eaf3f62c?auto=format&fit=crop&w=800&q=80" alt="Microrganismos">
-        <h3>Microrganismos Incríveis</h3>
-        <p>Existem bactérias que sobrevivem em vulcões e até no espaço!</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>🌎 &copy; 2025 Mundo da Ciência — Explorando o conhecimento sem fronteiras.</p>
-  </footer>
-</body>
-</html>
   
+
