@@ -1,189 +1,228 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site de Ciências</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Legal com Jogo da Cobrinha</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.3);
+    }
+    h1 { font-size: 3.5rem; margin-bottom: 10px; }
+    h2 { font-size: 2rem; margin: 30px 0 15px; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover { transform: scale(1.05); }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #eef2f3;
-        }
+    .game-section {
+      text-align: center;
+      background: rgba(0,0,0,0.4);
+      padding: 40px;
+      border-radius: 20px;
+      margin: 50px 0;
+    }
+    #gameCanvas {
+      border: 8px solid #fff;
+      border-radius: 10px;
+      background: #000;
+      box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      background: #ff4757;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background: #ff3742; transform: scale(1.1); }
 
-        header {
-            background: #1e88e5;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background: #1565c0;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            font-size: 18px;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 30px;
-        }
-
-        h2 {
-            color: #1565c0;
-        }
-
-        img {
-            max-width: 300px;
-            border-radius: 8px;
-        }
-
-        /* JOGO DA VELHA */
-        #game {
-            margin-top: 20px;
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            gap: 5px;
-            justify-content: center;
-        }
-
-        .cell {
-            width: 100px;
-            height: 100px;
-            background: white;
-            border: 2px solid #1565c0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 40px;
-            cursor: pointer;
-        }
-
-        #reset {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 18px;
-            background: #1e88e5;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #reset:hover {
-            background: #0d47a1;
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0,0,0,0.3);
+      margin-top: 50px;
+    }
+  </style>
 </head>
-
 <body>
 
-    <header>
-        <h1>Site de Ciências</h1>
-        <p>Biologia • Física • Química</p>
-    </header>
+  <header>
+    <h1>Meu Site Incrível</h1>
+    <p>Imagens lindas + Jogo da Cobrinha grátis!</p>
+  </header>
 
-    <nav>
-        <a href="#biologia">Biologia</a>
-        <a href="#fisica">Física</a>
-        <a href="#quimica">Química</a>
-        <a href="#jogo">Jogo da Velha</a>
-    </nav>
+  <div class="container">
 
-    <section id="biologia">
-        <h2>Biologia</h2>
-        <p>A biologia estuda os seres vivos e os processos que sustentam a vida.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/DNA_Structure%2BKey%2BLabelled.pn_NoBB.png" 
-             alt="Imagem de DNA">
-    </section>
+    <h2>Galeria de Imagens</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1506905925346-500db42c52ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Montanhas">
+      <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Névoa na floresta">
+      <img src="https://images.unsplash.com/photo-1511884642898-4c922225c15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Praia paradisíaca">
+      <img src="https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Aurora boreal">
+      <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Comida deliciosa">
+      <img src="https://images.unsplash.com/photo-1518837699143-02b87f0f5463?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Cidade à noite">
+    </div>
 
-    <section id="fisica">
-        <h2>Física</h2>
-        <p>A física analisa o comportamento da matéria, energia e suas interações.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Newton%27s_cradle_animation_book_2.gif" 
-             alt="Pêndulo de Newton">
-    </section>
+    <div class="game-section">
+      <h2>Bônus: Jogo da Cobrinha!</h2>
+      <p>Use as setas do teclado ← ↑ → ↓ para jogar</p>
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+      <div>
+        <p>Pontuação: <span id="score">0</span></p>
+        <button onclick="resetGame()">Novo Jogo</button>
+      </div>
+    </div>
 
-    <section id="quimica">
-        <h2>Química</h2>
-        <p>A química estuda a composição, estrutura e transformações da matéria.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Chemical_reaction_icon.png" 
-             alt="Reação química">
-    </section>
+  </div>
 
-    <section id="jogo">
-        <h2>Jogo da Velha</h2>
-        <p>Jogue contra outra pessoa no clássico jogo da velha!</p>
+  <footer>
+    <p>Feito com ♥ em 2025 – Divirta-se!</p>
+  </footer>
 
-        <div id="game">
-            <div class="cell" onclick="play(this)"></div>
-            <div class="cell" onclick="play(this)"></div>
-            <div class="cell" onclick="play(this)"></div>
-            <div class="cell" onclick="play(this)"></div>
-            <div class="cell" onclick="play(this)"></div>
-            <div class="cell" onclick="play(this)"></div>
-            <div class="cell" onclick="play(this)"></div>
-            <div class="cell" onclick="play(this)"></div>
-            <div class="cell" onclick="play(this)"></div>
-        </div>
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const scoreElement = document.getElementById('score');
 
-        <button id="reset" onclick="resetGame()">Reiniciar</button>
-    </section>
+    const grid = 20;
+    let count = 0;
+    let score = 0;
 
-    <script>
-        let turno = "X";
-        let fim = false;
+    let snake = {
+      x: 160,
+      y: 160,
+      dx: grid,
+      dy: 0,
+      cells: [],
+      maxCells: 4
+    };
 
-        function play(cell) {
-            if (cell.innerHTML !== "" || fim) return;
+    let apple = {
+      x: 320,
+      y: 320
+    };
 
-            cell.innerHTML = turno;
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
 
-            if (checkWin()) {
-                alert(turno + " venceu!");
-                fim = true;
-                return;
-            }
+    function loop() {
+      requestAnimationFrame(loop);
 
-            turno = turno === "X" ? "O" : "X";
+      if (++count < 6) return; // controla velocidade
+      count = 0;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Move a cobra
+      snake.x += snake.dx;
+      snake.y += snake.dy;
+
+      // Parede = volta do outro lado (efeito infinito)
+      if (snake.x >= canvas.width) snake.x = 0;
+      if (snake.x < 0) snake.x = canvas.width;
+      if (snake.y >= canvas.height) snake.y = 0;
+      if (snake.y < 0) snake.y = canvas.height;
+
+      // Adiciona nova cabeça
+      snake.cells.unshift({ x: snake.x, y: snake.y });
+
+      // Remove cauda se necessário
+      if (snake.cells.length > snake.maxCells) {
+        snake.cells.pop();
+      }
+
+      // Desenha maçã
+      ctx.fillStyle = '#ff4757';
+      ctx.fillRect(apple.x, apple.y, grid - 1, grid - 1);
+
+      // Desenha cobra
+      snake.cells.forEach((cell, index) => {
+        ctx.fillStyle = index === 0 ? '#fff' : '#2ed573';
+        ctx.fillRect(cell.x, cell.y, grid - 1, grid - 1);
+
+        // Comeu a maçã?
+        if (cell.x === apple.x && cell.y === apple.y) {
+          snake.maxCells++;
+          score++;
+          scoreElement.textContent = score;
+
+          apple.x = getRandomInt(0, 20) * grid;
+          apple.y = getRandomInt(0, 20) * grid;
         }
+      });
+    }
 
-        function checkWin() {
-            const cells = document.querySelectorAll(".cell");
-            const c = [...cells].map(c => c.innerHTML);
+    // Controles
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft' && snake.dx === 0) {
+        snake.dx = -grid;
+        snake.dy = 0;
+      } else if (e.key === 'ArrowUp' && snake.dy === 0) {
+        snake.dx = 0;
+        snake.dy = -grid;
+      } else if (e.key === 'ArrowRight' && snake.dx === 0) {
+        snake.dx = grid;
+        snake.dy = 0;
+      } else if (e.key === 'ArrowDown' && snake.dy === 0) {
+        snake.dx = 0;
+        snake.dy = grid;
+      }
+    });
 
-            const wins = [
-                [0,1,2], [3,4,5], [6,7,8], 
-                [0,3,6], [1,4,7], [2,5,8], 
-                [0,4,8], [2,4,6]
-            ];
+    function resetGame() {
+      snake.x = 160;
+      snake.y = 160;
+      snake.cells = [];
+      snake.maxCells = 4;
+      snake.dx = grid;
+      snake.dy = 0;
+      score = 0;
+      scoreElement.textContent = score;
+      apple.x = getRandomInt(0, 20) * grid;
+      apple.y = getRandomInt(0, 20) * grid;
+    }
 
-            return wins.some(w => 
-                c[w[0]] !== "" && 
-                c[w[0]] === c[w[1]] && 
-                c[w[1]] === c[w[2]]
-            );
-        }
-
-        function resetGame() {
-            document.querySelectorAll(".cell").forEach(c => c.innerHTML = "");
-            turno = "X";
-            fim = false;
-        }
-    </script>
-
+    requestAnimationFrame(loop);
+  </script>
 </body>
 </html>
+    
+    
 
 
   
+     
+
 
 
