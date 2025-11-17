@@ -1,156 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neon Science - O Futuro da Ciência</title>
-  <style>
-    /* ===== ESTILOS GERAIS ===== */
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at top, #020024, #090979, #000);
-      color: #fff;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Ciências</title>
 
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      text-align: center;
-      padding: 40px 20px;
-      box-shadow: 0 0 25px #00f3ff;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+        }
 
-    header h1 {
-      font-size: 3em;
-      text-shadow: 0 0 15px #00f3ff;
-    }
+        header {
+            background: #1e88e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-    nav {
-      text-align: center;
-      margin-top: 20px;
-    }
+        nav {
+            background: #1565c0;
+            padding: 10px;
+            text-align: center;
+        }
 
-    nav a {
-      color: #00f3ff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-size: 18px;
+            text-decoration: none;
+        }
 
-    nav a:hover {
-      text-shadow: 0 0 10px #00f3ff;
-    }
+        section {
+            padding: 30px;
+        }
 
-    /* ===== SEÇÃO PRINCIPAL ===== */
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+        h2 {
+            color: #1565c0;
+        }
 
-    section h2 {
-      font-size: 2.5em;
-      color: #00f3ff;
-      text-shadow: 0 0 10px #00f3ff;
-    }
+        img {
+            max-width: 300px;
+            border-radius: 8px;
+        }
 
-    section p {
-      max-width: 800px;
-      margin: 20px auto;
-      line-height: 1.6;
-      font-size: 1.2em;
-    }
+        /* JOGO DA VELHA */
+        #game {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+            justify-content: center;
+        }
 
-    /* ===== GALERIA ===== */
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-    }
+        .cell {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border: 2px solid #1565c0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            cursor: pointer;
+        }
 
-    .galeria img {
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #00f3ff;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+        #reset {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #1e88e5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    .galeria img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00f3ff;
-    }
-
-    /* ===== RODAPÉ ===== */
-    footer {
-      background: rgba(0, 0, 0, 0.8);
-      text-align: center;
-      padding: 30px 20px;
-      box-shadow: 0 0 20px #00f3ff inset;
-    }
-
-    footer p {
-      font-size: 1em;
-      color: #aaa;
-    }
-
-    /* ===== RESPONSIVIDADE ===== */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2em; }
-      section h2 { font-size: 2em; }
-      .galeria img { width: 90%; }
-    }
-  </style>
-
-  <!-- Fonte futurista -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+        #reset:hover {
+            background: #0d47a1;
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>⚛️ Neon Science ⚛️</h1>
+    <header>
+        <h1>Site de Ciências</h1>
+        <p>Biologia • Física • Química</p>
+    </header>
+
     <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#descobertas">Descobertas</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#contato">Contato</a>
+        <a href="#biologia">Biologia</a>
+        <a href="#fisica">Física</a>
+        <a href="#quimica">Química</a>
+        <a href="#jogo">Jogo da Velha</a>
     </nav>
-  </header>
 
-  <section id="sobre">
-    <h2>O Futuro da Ciência</h2>
-    <p>Bem-vindo ao <strong>Neon Science</strong> — um portal dedicado à exploração das fronteiras da física, biotecnologia e inteligência artificial.  
-    Nossa missão é revelar o que o futuro reserva para a humanidade através da ciência e da inovação.</p>
-  </section>
+    <section id="biologia">
+        <h2>Biologia</h2>
+        <p>A biologia estuda os seres vivos e os processos que sustentam a vida.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/DNA_Structure%2BKey%2BLabelled.pn_NoBB.png" 
+             alt="Imagem de DNA">
+    </section>
 
-  <section id="descobertas">
-    <h2>Descobertas Recentes</h2>
-    <p>Da fusão nuclear limpa às interfaces cérebro-máquina, a ciência do amanhã está sendo moldada hoje.  
-    Explore as descobertas mais recentes que estão redefinindo o que é possível.</p>
+    <section id="fisica">
+        <h2>Física</h2>
+        <p>A física analisa o comportamento da matéria, energia e suas interações.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Newton%27s_cradle_animation_book_2.gif" 
+             alt="Pêndulo de Newton">
+    </section>
 
-    <div class="galeria">
-      <img src="https://images.unsplash.com/photo-1581091870622-9c8b5d4a0f87?auto=format&fit=crop&w=800&q=80" alt="Laboratório Futurista">
-      <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=800&q=80" alt="Cérebro Digital">
-      <img src="https://images.unsplash.com/photo-1581091215367-59ab6aee74ab?auto=format&fit=crop&w=800&q=80" alt="Robô Inteligente">
-    </div>
-  </section>
+    <section id="quimica">
+        <h2>Química</h2>
+        <p>A química estuda a composição, estrutura e transformações da matéria.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Chemical_reaction_icon.png" 
+             alt="Reação química">
+    </section>
 
-  <section id="galeria">
-    <h2>Visões do Futuro</h2>
-    <div class="galeria">
-      <img src="https://images.unsplash.com/photo-1581092334504-16c86f1e0d4c?auto=format&fit=crop&w=800&q=80" alt="Nanotecnologia">
-      <img src="https://images.unsplash.com/photo-1581093588401-9f3e9c7a5e9c?auto=format&fit=crop&w=800&q=80" alt="Estação Espacial">
-      <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc4?auto=format&fit=crop&w=800&q=80" alt="Energia do Futuro">
-    </div>
-  </section>
+    <section id="jogo">
+        <h2>Jogo da Velha</h2>
+        <p>Jogue contra outra pessoa no clássico jogo da velha!</p>
 
-  <section id="contato">
-    <h2>Entre em Contato</h2>
-    <p>Quer colaborar com nossas pesquisas ou enviar uma matéria científica?  
-    Escreva para: <a
+        <div id="game">
+            <div class="cell" onclick="play(this)"></div>
+            <div class="cell" onclick="play(this)"></div>
+            <div class="cell" onclick="play(this)"></div>
+            <div class="cell" onclick="play(this)"></div>
+            <div class="cell" onclick="play(this)"></div>
+            <div class="cell" onclick="play(this)"></div>
+            <div class="cell" onclick="play(this)"></div>
+            <div class="cell" onclick="play(this)"></div>
+            <div class="cell" onclick="play(this)"></div>
+        </div>
+
+        <button id="reset" onclick="resetGame()">Reiniciar</button>
+    </section>
+
+    <script>
+        let turno = "X";
+        let fim = false;
+
+        function play(cell) {
+            if (cell.innerHTML !== "" || fim) return;
+
+            cell.innerHTML = turno;
+
+            if (checkWin()) {
+                alert(turno + " venceu!");
+                fim = true;
+                return;
+            }
+
+            turno = turno === "X" ? "O" : "X";
+        }
+
+        function checkWin() {
+            const cells = document.querySelectorAll(".cell");
+            const c = [...cells].map(c => c.innerHTML);
+
+            const wins = [
+                [0,1,2], [3,4,5], [6,7,8], 
+                [0,3,6], [1,4,7], [2,5,8], 
+                [0,4,8], [2,4,6]
+            ];
+
+            return wins.some(w => 
+                c[w[0]] !== "" && 
+                c[w[0]] === c[w[1]] && 
+                c[w[1]] === c[w[2]]
+            );
+        }
+
+        function resetGame() {
+            document.querySelectorAll(".cell").forEach(c => c.innerHTML = "");
+            turno = "X";
+            fim = false;
+        }
+    </script>
+
+</body>
+</html>
+
 
   
+
 
