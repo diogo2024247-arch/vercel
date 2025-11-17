@@ -1,228 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Legal com Jogo da Cobrinha</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      min-height: 100vh;
-    }
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: rgba(0,0,0,0.3);
-    }
-    h1 { font-size: 3.5rem; margin-bottom: 10px; }
-    h2 { font-size: 2rem; margin: 30px 0 15px; }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
-    }
-    .gallery img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-    }
-    .gallery img:hover { transform: scale(1.05); }
-
-    .game-section {
-      text-align: center;
-      background: rgba(0,0,0,0.4);
-      padding: 40px;
-      border-radius: 20px;
-      margin: 50px 0;
-    }
-    #gameCanvas {
-      border: 8px solid #fff;
-      border-radius: 10px;
-      background: #000;
-      box-shadow: 0 0 30px rgba(0,0,0,0.8);
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px 30px;
-      font-size: 1.2rem;
-      background: #ff4757;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover { background: #ff3742; transform: scale(1.1); }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: rgba(0,0,0,0.3);
-      margin-top: 50px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Ciências Bem Na Brisa | Ciência leve e divertida</title>
+    <meta name="description" content="Ciência explicada de forma simples, leve e com aquela brisa boa. Astronomia, biologia, física, química… tudo com calma e prazer!">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-ciencia: #0d6efd;
+            --azul-claro: #a3d8ff;
+            --branco: #ffffff;
+            --cinza-claro: #f8f9fa;
+            --verde: #2ecc71;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--cinza-claro);
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(13, 110, 253, 0.8), rgba(13, 110, 253, 0.7)),
+                        url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=2370&auto=format') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            font-weight: 700;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.6);
+            margin-bottom: 20px;
+        }
+        
+        .slogan {
+            font-size: 1.9rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            max-width: 800px;
+        }
+        
+        .secao {
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .sobre { background: white; }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--azul-ciencia);
+            margin-bottom: 30px;
+        }
+        
+        p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            color: #444;
+        }
+        
+        .topicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+        
+        .card {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card h3 {
+            font-size: 1.6rem;
+            color: var(--azul-ciencia);
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background: var(--azul-ciencia);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--verde);
+            color: white;
+            padding: 15px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background: #27ae60;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .logo { font-size: 3.8rem; }
+            .slogan { font-size: 1.5rem; }
+            h2 { font-size: 2.8rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Meu Site Incrível</h1>
-    <p>Imagens lindas + Jogo da Cobrinha grátis!</p>
-  </header>
+    <header>
+        <div>
+            <h1 class="logo">De Ciências<br>Bem Na Brisa</h1>
+            <p class="slogan">Ciência explicada com calma, clareza e aquela brisa boa de quem realmente entende o assunto</p>
+        </div>
+    </header>
 
-  <div class="container">
+    <section class="secao sobre">
+        <h2>Aprenda ciência de um jeito leve</h2>
+        <p>Aqui a gente descomplica astronomia, biologia, física, química, neurociência e muito mais. Sem enrolação, sem fórmulas assustadoras logo de cara. Só conhecimento puro, servido com tranquilidade e bom humor.</p>
+        <a href="#topicos" class="btn">Comece agora</a>
+    </section>
 
-    <h2>Galeria de Imagens</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1506905925346-500db42c52ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Montanhas">
-      <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Névoa na floresta">
-      <img src="https://images.unsplash.com/photo-1511884642898-4c922225c15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Praia paradisíaca">
-      <img src="https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Aurora boreal">
-      <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Comida deliciosa">
-      <img src="https://images.unsplash.com/photo-1518837699143-02b87f0f5463?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Cidade à noite">
-    </div>
+    <section class="secao" id="topicos">
+        <h2>Tópicos que a gente ama</h2>
+        <div class="topicos">
+            <div class="card">
+                <h3>🌌 Astronomia & Cosmologia</h3>
+                <p>Buracos negros, multiverso, origem do universo… tudo explicado como se a gente estivesse olhando as estrelas juntos na praia.</p>
+            </div>
+            <div class="card">
+                <h3>🧠 Neurociência & Comportamento</h3>
+                <p>Como o cérebro funciona, por que a gente sente o que sente, e truques pra estudar melhor e viver mais leve.</p>
+            </div>
+            <div class="card">
+                <h3>🌊 Oceanografia & Biologia Marinha</h3>
+                <p>O mar é nosso quintal. Aqui você entende as correntes, os animais incríveis e por que o oceano é o pulmão do planeta.</p>
+            </div>
+            <div class="card">
+                <h3>⚡️ Física do Dia a Dia</h3>
+                <p>Por que o céu é azul? Como funciona o Wi-Fi? Tudo com exemplos simples e aquele “aaaah agora entendi!”.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="game-section">
-      <h2>Bônus: Jogo da Cobrinha!</h2>
-      <p>Use as setas do teclado ← ↑ → ↓ para jogar</p>
-      <canvas id="gameCanvas" width="400" height="400"></canvas>
-      <div>
-        <p>Pontuação: <span id="score">0</span></p>
-        <button onclick="resetGame()">Novo Jogo</button>
-      </div>
-    </div>
+    <footer>
+        <p>© 2025 De Ciências Bem Na Brisa • Feito com ♥ e muita curiosidade no Brasil</p>
+        <p>Quer sugerir um tema ou bater papo sobre ciência? Manda um oi!</p>
+    </footer>
 
-  </div>
-
-  <footer>
-    <p>Feito com ♥ em 2025 – Divirta-se!</p>
-  </footer>
-
-  <script>
-    const canvas = document.getElementById('gameCanvas');
-    const ctx = canvas.getContext('2d');
-    const scoreElement = document.getElementById('score');
-
-    const grid = 20;
-    let count = 0;
-    let score = 0;
-
-    let snake = {
-      x: 160,
-      y: 160,
-      dx: grid,
-      dy: 0,
-      cells: [],
-      maxCells: 4
-    };
-
-    let apple = {
-      x: 320,
-      y: 320
-    };
-
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
-    }
-
-    function loop() {
-      requestAnimationFrame(loop);
-
-      if (++count < 6) return; // controla velocidade
-      count = 0;
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Move a cobra
-      snake.x += snake.dx;
-      snake.y += snake.dy;
-
-      // Parede = volta do outro lado (efeito infinito)
-      if (snake.x >= canvas.width) snake.x = 0;
-      if (snake.x < 0) snake.x = canvas.width;
-      if (snake.y >= canvas.height) snake.y = 0;
-      if (snake.y < 0) snake.y = canvas.height;
-
-      // Adiciona nova cabeça
-      snake.cells.unshift({ x: snake.x, y: snake.y });
-
-      // Remove cauda se necessário
-      if (snake.cells.length > snake.maxCells) {
-        snake.cells.pop();
-      }
-
-      // Desenha maçã
-      ctx.fillStyle = '#ff4757';
-      ctx.fillRect(apple.x, apple.y, grid - 1, grid - 1);
-
-      // Desenha cobra
-      snake.cells.forEach((cell, index) => {
-        ctx.fillStyle = index === 0 ? '#fff' : '#2ed573';
-        ctx.fillRect(cell.x, cell.y, grid - 1, grid - 1);
-
-        // Comeu a maçã?
-        if (cell.x === apple.x && cell.y === apple.y) {
-          snake.maxCells++;
-          score++;
-          scoreElement.textContent = score;
-
-          apple.x = getRandomInt(0, 20) * grid;
-          apple.y = getRandomInt(0, 20) * grid;
-        }
-      });
-    }
-
-    // Controles
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft' && snake.dx === 0) {
-        snake.dx = -grid;
-        snake.dy = 0;
-      } else if (e.key === 'ArrowUp' && snake.dy === 0) {
-        snake.dx = 0;
-        snake.dy = -grid;
-      } else if (e.key === 'ArrowRight' && snake.dx === 0) {
-        snake.dx = grid;
-        snake.dy = 0;
-      } else if (e.key === 'ArrowDown' && snake.dy === 0) {
-        snake.dx = 0;
-        snake.dy = grid;
-      }
-    });
-
-    function resetGame() {
-      snake.x = 160;
-      snake.y = 160;
-      snake.cells = [];
-      snake.maxCells = 4;
-      snake.dx = grid;
-      snake.dy = 0;
-      score = 0;
-      scoreElement.textContent = score;
-      apple.x = getRandomInt(0, 20) * grid;
-      apple.y = getRandomInt(0, 20) * grid;
-    }
-
-    requestAnimationFrame(loop);
-  </script>
 </body>
 </html>
-    
-    
-
-
-  
-     
-
-
-
