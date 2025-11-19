@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+    <h2>Monte seu próprio circuito elétrico!</h2>
+<iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_pt_BR.html" 
+        width="100%" height="600" allowfullscreen style="border:none;"></iframe>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -171,8 +174,103 @@
         <p>© 2025 De Ciências Bem Na Brisa • Feito com ♥ e muita curiosidade no Brasil</p>
         <p>Quer sugerir um tema ou bater papo sobre ciência? Manda um oi!</p>
     </footer>
+    <h2>Teste: Você entende de Evolução?</h2>
+<div class="quiz-container">
+  <div id="quiz"></div>
+  <button id="submit">Ver resultado</button>
+  <div id="results"></div>
+</div>
+
+<script>
+const quizData = [
+  { question: "Quem propôs a teoria da seleção natural?", a: "Darwin", b: "Lamarck", c: "Mendel", d: "Watson", correct: "a" },
+  { question: "Qual é o principal mecanismo da evolução?", a: "Mutação", b: "Seleção natural", c: "Deriva genética", d: "Todas acima", correct: "d" },
+  // adicione quantas quiser
+];
+
+let quiz = document.getElementById('quiz');
+let html = '';
+quizData.forEach((q, i) => {
+  html += `<div class="pergunta">
+    <p><strong>${i+1}.</strong> ${q.question}</p>
+    <label><input type="radio" name="q${i}" value="a"> ${q.a}</label><br>
+    <label><input type="radio" name="q${i}" value="b"> ${q.b}</label><br>
+    <label><input type="radio" name="q${i}" value="c"> ${q.c}</label><br>
+    <label><input type="radio" name="q${i}" value="d"> ${q.d}</label>
+  </div><hr>`;
+});
+quiz.innerHTML = html;
+
+document.getElementById('submit').onclick = () => {
+  let score = 0;
+  quizData.forEach((q, i) => {
+    let selected = document.querySelector(`input[name="q${i}"]:checked`);
+    if (selected && selected.value === q.correct) score++;
+  });
+  document.getElementById('results').innerHTML = `<h3>Você acertou ${score}/${quizData.length}!</h3>`;
+};
+</script>
+
+<style>
+.quiz-container { max-width: 700px; margin: 40px auto; padding: 20px; background: 20px 30px; background: #f0f7ff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.pergunta { margin: 25px 0; }
+button { padding: 12px 30px; font-size: 18px; background: #0066ff; color: white; border: none; border-radius: 8px; cursor: pointer; }
+#results { margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 10px; font-size: 1.4em; text-align: center; }
+    <h2>Qual sua idade em outros planetas?</h2>
+<input type="number" id="idade" placeholder="Sua idade na Terra" style="padding:10px; font-size:18px;">
+<button onclick="calcular()">Calcular</button>
+<div id="resultado"></div>
+
+<script>
+function calcular() {
+  let idade = document.getElementById('idade').value;
+  if (!idade) return alert("Digite sua idade!");
+  
+  const planetas = {
+    Mercúrio: 0.241,
+    Vênus: 0.615,
+    Marte: 1.881,
+    Júpiter: 11.86,
+    Saturno: 29.46,
+    Urano: 84.01,
+    Netuno: 164.8
+  };
+  
+  let html = `<h3>Você teria:</h3>`;
+  for (let p in planetas) {
+    let anos = idade / planetas[p];
+    html += `<p><strong>${p}:</strong> ${anos.toFixed(1)} anos</p>`;
+  }
+  document.getElementById('resultado').innerHTML = html;
+}
+</script>
+      .animar {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+.animar.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+      <div class="animar">
+  <h2>Evolução das espécies</h2>
+  <img src="evolucao.jpg" width="100%">
+</div>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.animar').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add('visivel');
+    }
+  });
+});
+</script>
+</style>
 
 </body>
 </html>
+
 
 
